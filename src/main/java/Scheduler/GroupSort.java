@@ -1,0 +1,36 @@
+package Scheduler;
+
+import java.util.*;
+
+public class GroupSort {
+    private Set<Person> studentsInSDA1;
+    private Set<Person> studentsInSDA2;
+    private Set<Person> studentsInSDA3;
+    private Set<Person> studentsInSDA4;
+
+    public GroupSort(Set<Person> studentsInSDA1, Set<Person> studentsInSDA2, Set<Person> studentsInSDA3, Set<Person> studentsInSDA4) {
+        this.studentsInSDA1 = studentsInSDA1;
+        this.studentsInSDA2 = studentsInSDA2;
+        this.studentsInSDA3 = studentsInSDA3;
+        this.studentsInSDA4 = studentsInSDA4;
+    }
+
+    public void invoke() {
+        System.out.println("students in group SDA1 Sorted By Lastname");
+        sortGroup(studentsInSDA1);
+        System.out.println("students in group SDA2 Sorted By Lastname");
+        sortGroup(studentsInSDA2);
+        System.out.println("students in group SDA3 Sorted By Lastname");
+        sortGroup(studentsInSDA3);
+        System.out.println("students in group SDA4 Sorted By Lastname");
+        sortGroup(studentsInSDA4);
+    }
+
+    private void sortGroup(Set<Person> studentsInSDA1) {
+
+        List<Person> sda1List = new ArrayList<>();
+        sda1List.addAll(studentsInSDA1);
+        Collections.sort(sda1List, Comparator.comparing(Person::getLastName));
+        System.out.println(sda1List.toString());
+    }
+}
