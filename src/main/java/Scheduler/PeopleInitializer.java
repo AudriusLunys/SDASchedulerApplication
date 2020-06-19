@@ -1,15 +1,61 @@
 package Scheduler;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
-public class MakeGroups {
+public class PeopleInitializer {
+    private Trainer trainer1;
+    private Trainer trainer2;
+    private Trainer trainer3;
+    private List<Student> studentList;
+    private Set<Student> studentsInSDA1;
+    private Set<Student> studentsInSDA2;
+    private Set<Student> studentsInSDA3;
+    private Set<Student> studentsInSDA4;
+    private List<Group> groupList;
 
-    static void runGroupMaker() {
+    public Trainer getTrainer1() {
+        return trainer1;
+    }
 
+    public Trainer getTrainer2() {
+        return trainer2;
+    }
 
-        Trainer trainer1 = new Trainer("Vladas", "Kietas", "1983-05-25", true);
-        Trainer trainer2 = new Trainer("Birute", "Viesuliene", "1988-12-01", true);
-        Trainer trainer3 = new Trainer("Vydas", "Vader", "1990-11-13", true);
+    public Trainer getTrainer3() {
+        return trainer3;
+    }
+
+    public List<Student> getStudentList() {
+        return studentList;
+    }
+
+    public Set<Student> getStudentsInSDA1() {
+        return studentsInSDA1;
+    }
+
+    public Set<Student> getStudentsInSDA2() {
+        return studentsInSDA2;
+    }
+
+    public Set<Student> getStudentsInSDA3() {
+        return studentsInSDA3;
+    }
+
+    public Set<Student> getStudentsInSDA4() {
+        return studentsInSDA4;
+    }
+
+    public List<Group> getGroupList() {
+        return groupList;
+    }
+
+    public PeopleInitializer invoke() {
+        trainer1 = new Trainer("Vladas", "Kietas", "1983-05-25", true);
+        trainer2 = new Trainer("Birute", "Viesuliene", "1988-12-01", true);
+        trainer3 = new Trainer("Vydas", "Vader", "1990-11-13", true);
 
 
         List<Trainer> trainerList = new ArrayList<>();
@@ -33,7 +79,7 @@ public class MakeGroups {
         Student student14 = new Student("Alysa", "Gailiene", "1989-09-01", true);
         Student student15 = new Student("Natalija", "Bulke", "1980-01-03", false);
 
-        List<Student> studentList = new ArrayList<>();
+        studentList = new ArrayList<>();
         studentList.add(student1);
         studentList.add(student2);
         studentList.add(student3);
@@ -51,26 +97,26 @@ public class MakeGroups {
         studentList.add(student15);
 
 
-        Set<Student> studentsInSDA1 = new HashSet<>();
+        studentsInSDA1 = new HashSet<>();
         studentsInSDA1.add(student1);
         studentsInSDA1.add(student2);
         studentsInSDA1.add(student3);
         studentsInSDA1.add(student4);
 
-        Set<Student> studentsInSDA2 = new HashSet<>();
+        studentsInSDA2 = new HashSet<>();
         studentsInSDA2.add(student5);
         studentsInSDA2.add(student6);
         studentsInSDA2.add(student7);
         studentsInSDA2.add(student8);
 
-        Set<Student> studentsInSDA3 = new HashSet<>();
+        studentsInSDA3 = new HashSet<>();
 
         studentsInSDA3.add(student9);
         studentsInSDA3.add(student10);
         studentsInSDA3.add(student11);
         studentsInSDA3.add(student12);
 
-        Set<Student> studentsInSDA4 = new HashSet<>();
+        studentsInSDA4 = new HashSet<>();
         studentsInSDA4.add(student13);
         studentsInSDA4.add(student14);
         studentsInSDA4.add(student15);
@@ -81,56 +127,12 @@ public class MakeGroups {
         Group group3 = new Group("SDA3", trainer3, studentsInSDA3);
         Group group4 = new Group("SDA4", trainer1, studentsInSDA4);
 
-        List<Group> groupList = new ArrayList<>();
+        groupList = new ArrayList<>();
         groupList.add(group1);
         groupList.add(group2);
         groupList.add(group3);
         groupList.add(group4);
-
-        printGroupsData(groupList);
-        System.out.println("************************************************************");
-        System.out.println("all students in a group sorted alphabetically by lastName");
-
-        new GroupSort(studentsInSDA1, studentsInSDA2, studentsInSDA3, studentsInSDA4).invoke();
-        System.out.println("************************************************************");
-        System.out.println("students with Java Knowledge in all groups");
-        new StudentJavaKnowledgeEvaluation(studentList).invoke();
-        System.out.println("************************************************************");
-        System.out.println("Display all students grouped by trainer that teaches to them");
-        new StudentsByTrainer(trainer1, trainer2, trainer3, groupList).invoke();
-
-
-
-
-
+        return this;
     }
-
-    private static void printGroupsData(List<Group> groupList) {
-        System.out.println("GROUPS, TRAINERS AND STUDENTS OF SDA");
-        for (Group group : groupList) {
-            System.out.println(group);
-        }
-    }
-
-
 }
-
-
-
-
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
 
