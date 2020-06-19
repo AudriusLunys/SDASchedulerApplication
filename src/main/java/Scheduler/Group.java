@@ -6,9 +6,9 @@ public class Group {
 
     String groupName;
     Person trainer;
-    Set<Person> studentsInGroup;
+    Set<Student> studentsInGroup;
 
-    public Group(String groupName, Person trainer, Set<Person> studentsInGroup) {
+    public Group(String groupName, Person trainer, Set<Student> studentsInGroup) {
         this.groupName = groupName;
         this.trainer = trainer;
         this.studentsInGroup = studentsInGroup;
@@ -31,11 +31,11 @@ public class Group {
         this.trainer = trainer;
     }
 
-    public Set<Person> getStudentsInGroup() {
+    public Set<Student> getStudentsInGroup() {
         return studentsInGroup;
     }
 
-    public void setStudentsInGroup(Set<Person> studentsInGroup) {
+    public void setStudentsInGroup(Set<Student> studentsInGroup) {
         this.studentsInGroup = studentsInGroup;
     }
 

@@ -7,12 +7,12 @@ public class MakeGroups {
     static void runGroupMaker() {
 
 
-        Person trainer1 = new Trainer("Vladas", "Kietas", "1983-05-25", true);
-        Person trainer2 = new Trainer("Birute", "Viesuliene", "1988-12-01", true);
-        Person trainer3 = new Trainer("Vydas", "Vader", "1990-11-13", true);
+        Trainer trainer1 = new Trainer("Vladas", "Kietas", "1983-05-25", true);
+        Trainer trainer2 = new Trainer("Birute", "Viesuliene", "1988-12-01", true);
+        Trainer trainer3 = new Trainer("Vydas", "Vader", "1990-11-13", true);
 
 
-        List<Person> trainerList = new ArrayList<>();
+        List<Trainer> trainerList = new ArrayList<>();
         trainerList.add(trainer1);
         trainerList.add(trainer2);
         trainerList.add(trainer3);
@@ -51,26 +51,26 @@ public class MakeGroups {
         studentList.add(student15);
 
 
-        Set<Person> studentsInSDA1 = new HashSet<>();
+        Set<Student> studentsInSDA1 = new HashSet<>();
         studentsInSDA1.add(student1);
         studentsInSDA1.add(student2);
         studentsInSDA1.add(student3);
         studentsInSDA1.add(student4);
 
-        Set<Person> studentsInSDA2 = new HashSet<>();
+        Set<Student> studentsInSDA2 = new HashSet<>();
         studentsInSDA2.add(student5);
         studentsInSDA2.add(student6);
         studentsInSDA2.add(student7);
         studentsInSDA2.add(student8);
 
-        Set<Person> studentsInSDA3 = new HashSet<>();
+        Set<Student> studentsInSDA3 = new HashSet<>();
 
         studentsInSDA3.add(student9);
         studentsInSDA3.add(student10);
         studentsInSDA3.add(student11);
         studentsInSDA3.add(student12);
 
-        Set<Person> studentsInSDA4 = new HashSet<>();
+        Set<Student> studentsInSDA4 = new HashSet<>();
         studentsInSDA4.add(student13);
         studentsInSDA4.add(student14);
         studentsInSDA4.add(student15);
@@ -98,6 +98,8 @@ public class MakeGroups {
         System.out.println("************************************************************");
         System.out.println("Display all students grouped by trainer that teaches to them");
         new StudentsByTrainer(trainer1, trainer2, trainer3, groupList).invoke();
+
+
 
 
 

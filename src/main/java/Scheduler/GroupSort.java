@@ -3,12 +3,12 @@ package Scheduler;
 import java.util.*;
 
 public class GroupSort {
-    private Set<Person> studentsInSDA1;
-    private Set<Person> studentsInSDA2;
-    private Set<Person> studentsInSDA3;
-    private Set<Person> studentsInSDA4;
+    private Set<Student> studentsInSDA1;
+    private Set<Student> studentsInSDA2;
+    private Set<Student> studentsInSDA3;
+    private Set<Student> studentsInSDA4;
 
-    public GroupSort(Set<Person> studentsInSDA1, Set<Person> studentsInSDA2, Set<Person> studentsInSDA3, Set<Person> studentsInSDA4) {
+    public GroupSort(Set<Student> studentsInSDA1, Set<Student> studentsInSDA2, Set<Student> studentsInSDA3, Set<Student> studentsInSDA4) {
         this.studentsInSDA1 = studentsInSDA1;
         this.studentsInSDA2 = studentsInSDA2;
         this.studentsInSDA3 = studentsInSDA3;
@@ -26,11 +26,11 @@ public class GroupSort {
         sortGroup(studentsInSDA4);
     }
 
-    private void sortGroup(Set<Person> studentsInSDA1) {
+    private void sortGroup(Set<Student> studentsInSDA1) {
 
-        List<Person> sda1List = new ArrayList<>();
+        List<Student> sda1List = new ArrayList<>();
         sda1List.addAll(studentsInSDA1);
-        Collections.sort(sda1List, Comparator.comparing(Person::getLastName));
+        Collections.sort(sda1List, Comparator.comparing(Student::getLastName));
         System.out.println(sda1List.toString());
     }
 }
